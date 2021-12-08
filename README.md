@@ -1,4 +1,3 @@
-# README
 # Objects of the real world
 
 * User
