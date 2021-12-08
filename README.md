@@ -5,10 +5,10 @@
 
 * Administrator
 
-* Test
+* Tests
 
-* Question
+* Questions
 
-* Answer
+* Answers
 
-* Result
+* Results
