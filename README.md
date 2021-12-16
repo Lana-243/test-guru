@@ -1,6 +1,6 @@
 # Objects of the real world
 
-* User
+* Users
 
 * Tests
 
