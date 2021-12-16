@@ -19,4 +19,5 @@ module TestGuru
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
   end
+  VERSION = "4.8.1".freeze
 end
