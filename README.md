@@ -1,24 +1,14 @@
-# README
+# Objects of the real world
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Users
 
-Things you may want to cover:
+* Tests
 
-* Ruby version
+* Categories
 
-* System dependencies
+* Questions
 
-* Configuration
+* Answers
 
-* Database creation
+* Results
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
