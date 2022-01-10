@@ -2,6 +2,8 @@
 
 one:
   answer: MyString
+  correct: false
 
 two:
   answer: MyString
+  correct: false
