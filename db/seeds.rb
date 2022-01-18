@@ -44,7 +44,7 @@ questions = Question.create!([
 ])
 
 
-answers = Answer.create!([
+Answer.create!([
  { title: ".rb", correct: true, question_id: questions[0].id },
  { title: ".ruby", correct: false, question_id: questions[0].id },
  { title: ".rrb", correct: false, question_id: questions[0].id },
@@ -90,7 +90,7 @@ answers = Answer.create!([
  { title: "Javlonga", correct: false, question_id: questions[10].id }
 ])
 
-results = Result.create!([
+Result.create!([
   { user_id: users[0].id, test_id: tests[2].id },
   { user_id: users[0].id, test_id: tests[1].id },
   { user_id: users[1].id, test_id: tests[0].id },
