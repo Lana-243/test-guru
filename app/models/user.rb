@@ -1,10 +1,12 @@
 class User < ApplicationRecord
-  has_many :tests, foreign_key: "author_id"
-  has_many :results
-  has_many :tests, through: :results
+  has_many :tests, foreign_key: "author_id", dependent: :destroy
+
+  has_many :results, dependent: :destroy
+  
+  has_many :tests, through: :results, dependent: :destroy
   def tests_by_level(level)
     Result
-    .joins("JOIN tests ON tests.test_id = results.test_id")
+    .joins(:tests)
     .where(results: { user_id: self.id })
     .where(tests: { level: level })
     .pluck(:title)
