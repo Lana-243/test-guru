@@ -10,16 +10,15 @@ class Test < ApplicationRecord
   scope :intermediate, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
 
-  validates :title, presence: true
+  validates :title, presence: true,
+                    uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 },
+                    uniqueness: { scope: :title }
 
-  #todo title from categories
-  scope :titles_by_category, ->(category_title) { where("title = ?", category_title) }
-
-
-  # def self.titles_by_category(category_title)
-  #   joins(:category)
-  #     .where(category: { title: category_title })
-  #   .order(title: :asc)
-  #   .pluck(:title)
-  # end
+  scope :titles_by_category, ->(category_title) {
+    joins(:category)
+      .where(category: { title: category_title })
+      .order(title: :asc)
+      .pluck(:title)
+  }
 end

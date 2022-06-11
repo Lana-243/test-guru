@@ -6,9 +6,8 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: { scope: :level }
   validates :email, presence: true
-  validates :level, numericality: { only_integer: true, greater_than: 0 }
 
-  def tests_by_level(level)
+  def user_tests_by_level(level)
     tests.where(level: level)
   end
 end
