@@ -19,6 +19,9 @@ class Test < ApplicationRecord
     joins(:category)
       .where(category: { title: category_title })
       .order(title: :asc)
-      .pluck(:title)
   }
+
+  def self.title_names_by_category(category_title)
+    titles_by_category(category_title).pluck(:title)
+  end
 end
