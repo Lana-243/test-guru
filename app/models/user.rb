@@ -3,7 +3,11 @@ class User < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :tests, through: :results
 
-  def tests_by_level(level)
+  validates :name, presence: true
+  validates :name, uniqueness: { scope: :level }
+  validates :email, presence: true
+
+  def user_tests_by_level(level)
     tests.where(level: level)
   end
 end
