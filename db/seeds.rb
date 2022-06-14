@@ -43,7 +43,6 @@ questions = Question.create!([
   { title: "...is the return type of the hashCode() method in the Object class?", test: tests[2] }
 ])
 
-
 Answer.create!([
  { title: ".rb", correct: true, question: questions[0] },
  { title: ".ruby", correct: false, question: questions[0] },
@@ -88,16 +87,4 @@ Answer.create!([
  { title: "Object", correct: false, question: questions[10] },
  { title: "void", correct: false, question: questions[10] },
  { title: "Javlonga", correct: false, question: questions[10] }
-])
-
-Result.create!([
-  { user: users[0], test: tests[2] },
-  { user: users[0], test: tests[1] },
-  { user: users[1], test: tests[0] },
-  { user: users[1], test: tests[2] },
-  { user: users[3], test: tests[0] },
-  { user: users[2], test: tests[3] },
-  { user: users[3], test: tests[2] },
-  { user: users[1], test: tests[1] },
-  { user: users[4], test: tests[3] }
 ])
