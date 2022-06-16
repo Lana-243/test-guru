@@ -2,7 +2,12 @@ class QuestionsController < ApplicationController
   before_action :set_test, only: %i[new create index]
   before_action :set_question, only: %i[show destroy]
 
-  # rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+
+  def index
+    questions = @test.questions.map { |question| question.title.to_s }
+    render plain: questions.join(', ')
+  end
 
   def new
     @question = @test.questions.build
@@ -15,11 +20,6 @@ class QuestionsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def index
-    questions = @test.questions.map { |question| question.title.to_s }
-    render plain: questions.join(', ')
   end
 
   def show
