@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_many :tests, through: :results
 
   validates :name, presence: true
-  validates :name, uniqueness: { scope: :level }
   validates :email, presence: true
 
   def user_tests_by_level(level)
